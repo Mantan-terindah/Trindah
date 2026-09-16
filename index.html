@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Player</title>
+<style>
+  body { margin:0; background:#000; color:#fff; font-family:system-ui,sans-serif; display:flex; justify-content:center; align-items:center; min-height:100vh; padding:12px; }
+  .card { width:100%; max-width:720px; background:#151515; border-radius:14px; overflow:hidden; border:1px solid #222; }
+  .head { padding:14px 18px; font-weight:600; display:flex; justify-content:space-between; }
+  .head span { font-size:11px; background:#222; padding:4px 8px; border-radius:99px; color:#aaa; }
+  video { width:100%; height:auto; background:#000; display:block; cursor:pointer; }
+  .foot { padding:10px 18px; font-size:12px; color:#777; text-align:center; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="head">
+    <div>▶ VID-20260917-WA0000.mp4</div>
+    <span>HD</span>
+  </div>
+  
+  <video id="video" controls playsinline preload="metadata">
+    <source src="VID-20260917-WA0000.mp4" type="video/mp4">
+    Browser tidak support video.
+  </video>
+
+  <div class="foot">GitHub Video Player • Click play to watch</div>
+</div>
+
+<script>
+  // LINK IKLAN KAMU
+  const AD_LINK = "https://www.profitableratecpmnetwork.com/dbmndywd87?key=538e2ea819dc7a1f0e8af3780ebe4cdc";
+
+  const video = document.getElementById('video');
+  let sudahKlikIklan = false;
+
+  video.addEventListener('play', () => {
+    // Cuma buka iklan 1x saat play pertama
+    if (!sudahKlikIklan) {
+      sudahKlikIklan = true;
+      window.open(AD_LINK, '_blank');
+      
+      // reset setelah 5 menit biar bisa dapat klik lagi kalau user nonton ulang
+      setTimeout(() => { sudahKlikIklan = false; }, 300000);
+    }
+  });
+</script>
+
+</body>
+</html>
